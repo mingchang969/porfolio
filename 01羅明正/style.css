@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;500&display=swap");
+:root {
+  --main-color: rgb(253, 192, 23);
+  --main-emcolor: rgb(255, 225, 151);
+  --main-bgcolor: rgb(7, 24, 36);
+}
+
+@media screen and (max-width: 1300px) {
+  body {
+    margin: 0px 6%;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 300;
+    color: var(--main-color);
+    background-color: var(--main-bgcolor);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+    margin: 0px 12%;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 300;
+    color: var(--main-color);
+    background-color: var(--main-bgcolor);
+  }
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90px;
+}
+
+header div#logo {
+  width: 60%;
+  min-width: 360px;
+}
+
+header div#logo h1 {
+  font-family: "Noto Serif TC", serif;
+  margin-left: 45px;
+  font-weight: bolder;
+  color: var(--main-color);
+}
+
+header div#menu {
+  width: 40%;
+  min-width: 600px;
+}
+
+header div#menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 34px 30px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: var(--main-color);
+}
+
+header div#menu ul li {
+  list-style-type: none;
+}
+
+header div#menu ul li a {
+  color: var(--main-color);
+  font-weight: 300;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+header div#menu ul li a:hover {
+  font-size: 1.2rem;
+  color: var(--main-emcolor);
+}
+
+header div#menu ul li a:active {
+  color: var(--main-emcolor);
+}
+
+header div#menu ul li span {
+  color: var(--main-emcolor);
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section div#center {
+  width: 100%;
+}
+
+section div#center #intro_text {
+  width: 320px;
+  border: double 5px var(--main-color);
+  border-radius: 20px;
+  margin-left: 32%;
+  margin-top: 23vh;
+  padding: 38px;
+  color: var(--main-color);
+  font-size: small;
+}
+
+section div#leftSide {
+  width: 55%;
+  min-width: 550px;
+}
+
+section div#leftSide #intro_text {
+  margin: auto;
+  margin-top: 17vh;
+  margin-left: 80px;
+  color: var(--main-color);
+  font-size: small;
+}
+
+section div#leftSide img {
+  margin-top: 45px;
+  margin-left: 62px;
+  width: 430px;
+}
+
+section div#rightSide {
+  width: 45%;
+  min-width: 420px;
+}
+
+section div#rightSide img {
+  float: right;
+  margin-top: 45px;
+  margin-right: 62px;
+  width: 430px;
+}
+
+section div#rightSide div.S_intro_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 140px;
+  margin-right: 64px;
+  margin-bottom: 60px;
+}
+
+section div#rightSide div.S_introSkill_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+  margin-right: 64px;
+  text-align: center;
+}
+
+section div#rightSide div.S_introSkill_box div.skill {
+  line-height: 1.8rem;
+  min-width: 30px;
+  border-radius: 2px;
+  border: solid 1px var(--main-color);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+section div#rightSide div.S_introSkill_box div.skill:hover {
+  line-height: 1.8rem;
+  min-width: 30px;
+  border-radius: 2px;
+  color: var(--main-bgcolor);
+  font-weight: 500;
+  background-color: var(--main-color);
+  border: solid 1px var(--main-color);
+  -webkit-transform: scale(1.2) translateY(-10px);
+          transform: scale(1.2) translateY(-10px);
+}
+
+section div#rightSide div.S_introSkill_box div.certification {
+  line-height: 1rem;
+  width: 22%;
+  padding: 8px 3px;
+  border-radius: 2px;
+  border: solid 1px var(--main-color);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+section div#rightSide div.S_introSkill_box div.certification:hover {
+  line-height: 1rem;
+  width: 22%;
+  padding: 8px 3px;
+  border-radius: 2px;
+  color: var(--main-bgcolor);
+  font-weight: 500;
+  background-color: var(--main-color);
+  border: solid 1px var(--main-color);
+  -webkit-transform: scale(1.2) translateY(-10px);
+          transform: scale(1.2) translateY(-10px);
+}
+
+section div#bottomside {
+  width: 100%;
+  height: 800px;
+  min-width: 800px;
+}
+
+section div#bottomside div.S_introExp_box {
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 368px;
+}
+
+section div#bottomside div.S_introExp_box div.session {
+  padding: 0px;
+  opacity: 0.6;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+section div#bottomside div.S_introExp_box div.session p {
+  padding: 0px 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: small;
+}
+
+section div#bottomside div.S_introExp_box div.session p.sub {
+  font-size: x-small;
+}
+
+section div#bottomside div.S_introExp_box div.session hr {
+  height: 1.5px;
+  border: none;
+  width: 100%;
+  background-color: var(--main-color);
+}
+
+section div#bottomside div.S_introExp_box div.session:hover {
+  -webkit-transform: translate(0, -20px);
+          transform: translate(0, -20px);
+  padding: 0px;
+  opacity: 1;
+}
+
+section div#bottomside div.S_introExp_box div.session:hover p {
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+section div#bottomside div.S_introExp_box div.session:hover p.sub {
+  font-size: small;
+}
+
+section div#bottomside div.S_introExp_box div.session:hover hr {
+  height: 2px;
+}
+
+.en_Font {
+  font-size: small;
+}
+
+.small_Font {
+  font-size: 3px;
+}
+
+div#work {
+  margin-top: 30px;
+  width: 100%;
+}
+
+div#work .workbox {
+  height: 700px;
+}
+
+div#work iframe {
+  width: 100%;
+  height: 60vh;
+}
+
+div#work h3 {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 500;
+  text-align: right;
+}
+
+div#work a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+div#work .btn_top {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 20px;
+  border: solid 1px;
+  margin-bottom: 60px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+div#work div.btn_top:hover {
+  font-weight: 500;
+  background-color: var(--main-color);
+  color: var(--main-bgcolor);
+}
+/*# sourceMappingURL=style.css.map */

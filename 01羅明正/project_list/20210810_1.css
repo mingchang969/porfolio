@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Staatliches&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, right top, from(#5482ff), to(#64ff86));
+  background: linear-gradient(90deg, #5482ff, #64ff86);
+}
+
+header {
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 560px) {
+  form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    /* Firefox */
+  }
+  form input,
+  form button {
+    border: none;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+    border-radius: 6px;
+    color: gray;
+  }
+  form input[type="text"] {
+    width: 276px;
+    min-width: 276px;
+    margin: 10px 120px;
+  }
+  form input::-webkit-outer-spin-button,
+  form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  form input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  form input[type="number"] {
+    width: 68px;
+    text-align: center;
+  }
+  form button {
+    cursor: pointer;
+    background: #009272;
+    color: white;
+  }
+  form button:active {
+    cursor: pointer;
+    background: #015a47;
+    color: #d4d4d4;
+  }
+  section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section div.todo {
+    width: 50vw;
+    min-width: 276px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0.3rem 0rem;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+  }
+  section div.todo p {
+    height: 1.8rem;
+    background-color: #f2fffc;
+    border-radius: 5px;
+    color: gray;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  section div.todo p.todo-text {
+    width: 100%;
+    margin: 8px 0;
+  }
+  section div.todo p.todo-time {
+    width: 60%;
+    margin-right: 26px;
+    text-align: center;
+    background-color: #015a47;
+    color: white;
+    opacity: 0.6;
+  }
+  section div.todo button {
+    padding: 0.4rem 0.58rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin-left: 0.6rem;
+  }
+  section div.todo button.check {
+    background-color: #fdc763;
+  }
+  section div.todo button.check:active {
+    cursor: pointer;
+    background-color: #b18b45;
+    color: #d4d4d4;
+  }
+  section div.todo button.delete {
+    background-color: #948fcf;
+  }
+  section div.todo button.delete:active {
+    cursor: pointer;
+    background-color: #6b6794;
+    color: #d4d4d4;
+  }
+}
+
+@media screen and (min-width: 560px) {
+  form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* Firefox */
+  }
+  form input,
+  form button {
+    border: none;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+    border-radius: 6px;
+    color: gray;
+  }
+  form input::-webkit-outer-spin-button,
+  form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  form input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  form input[type="number"] {
+    width: 80px;
+    text-align: center;
+  }
+  form button {
+    cursor: pointer;
+    background: #009272;
+    color: white;
+  }
+  form button:active {
+    cursor: pointer;
+    background: #015a47;
+    color: #d4d4d4;
+  }
+  section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section div.todo {
+    width: 70vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0.2rem 0rem;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+  }
+  section div.todo p {
+    height: 1.8rem;
+    background-color: white;
+    border-radius: 5px;
+    color: gray;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  section div.todo p.todo-text {
+    width: 70%;
+  }
+  section div.todo p.todo-time {
+    width: 30%;
+    margin-left: 0.4rem;
+    text-align: center;
+    background-color: #015a47;
+    color: white;
+    opacity: 0.6;
+  }
+  section div.todo button {
+    padding: 0.4rem 0.58rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin-left: 0.4rem;
+  }
+  section div.todo button.check {
+    background-color: #fdc763;
+  }
+  section div.todo button.check:active {
+    cursor: pointer;
+    background-color: #b18b45;
+    color: #d4d4d4;
+  }
+  section div.todo button.delete {
+    background-color: #948fcf;
+  }
+  section div.todo button.delete:active {
+    cursor: pointer;
+    background-color: #6b6794;
+    color: #d4d4d4;
+  }
+}
+
+.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.2rem;
+}
+
+i {
+  pointer-events: none;
+}
+
+div.sort {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.6rem 0 1rem 0;
+}
+
+div.sort button {
+  cursor: pointer;
+  background-color: #00614c;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.58rem;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+@-webkit-keyframes scaleUp {
+  from {
+    -webkit-transform: scale(0) translate(-600px);
+            transform: scale(0) translate(-600px);
+  }
+  to {
+    -webkit-transform: scale(1) translate(0px);
+            transform: scale(1) translate(0px);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    -webkit-transform: scale(0) translate(-600px);
+            transform: scale(0) translate(-600px);
+  }
+  to {
+    -webkit-transform: scale(1) translate(0px);
+            transform: scale(1) translate(0px);
+  }
+}
+
+@-webkit-keyframes scaleDown {
+  to {
+    -webkit-transform: scale(0) translate(600px);
+            transform: scale(0) translate(600px);
+  }
+}
+
+@keyframes scaleDown {
+  to {
+    -webkit-transform: scale(0) translate(600px);
+            transform: scale(0) translate(600px);
+  }
+}
+/*# sourceMappingURL=20210810_1.css.map */
