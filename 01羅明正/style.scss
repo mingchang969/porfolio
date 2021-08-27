@@ -265,7 +265,6 @@ div#work {
     a {
         color: var(--main-color);
         text-decoration: none;
-        
     }
 
     .btn_top {
@@ -284,4 +283,26 @@ div#work {
         background-color: var(--main-color);
         color: var(--main-bgcolor);
     }
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 10px rgb(97, 97, 97);
+    border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
