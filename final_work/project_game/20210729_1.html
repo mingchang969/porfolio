@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cursorEffect.css">
+    <script src="./cursorEffect.js"></script>
+    <title>大廳</title>
+
+    <style>
+        :root {
+            --mouse-x;
+            --mouse-y;
+            --radius: 30px;
+            --factor: 1;
+            --scale: ;
+        }
+
+        body {
+            background-color: #000000;
+        }
+
+        
+
+        .box {
+            width: 500px;
+            /* background-color: rgb(255, 65, 65); */
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            margin-left: -250px;
+            margin-top: -80px;
+            top: 50%;
+            left: 50%;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 160px;
+            border: dashed 3px rgb(255, 255, 255);
+            border-radius: 10px;
+            background-size: 80PX;
+            opacity: 0.6;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image:url("./images/cubes.png");
+            transition:all ease 0.5s;
+            
+        }
+
+        .box1:hover{
+            background-size: 85PX;
+            border-radius: 80px;
+            opacity: 1;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 160px;
+            border: dashed 3px rgb(255, 255, 255);
+            background-size: 70PX;
+            opacity: 0.6;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image:url("./images/cursor.png");
+            border-radius: 10px;
+            transition:all ease 0.5s;
+        }
+
+        .box2:hover{
+            background-size: 85PX;
+            border-radius: 80px;
+            opacity: 1;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="ball">
+        <div class="halo"></div>
+        <div class="halo"></div>
+        <div class="halo"></div>
+    </div>
+
+    <div class="box">
+        <a href="./20210727_2.html"><div class="box1"></div></a>
+        <a href="./20210727_3.html"><div class="box2"></div></a>
+    </div>
+
+    <script>
+
+        delaymotion();
+
+    </script>
+
+</body>
+
+</html>

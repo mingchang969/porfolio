@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./cursorEffect.js"></script>
+    <link rel="stylesheet" href="./cursorEffect.css">
+    <title>猜數</title>
+
+    <style>
+        body {
+            background-color: #000;
+            color: gold;
+        }
+
+        .div1 {
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -150px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="ball">
+        <div class="halo"></div>
+        <div class="halo"></div>
+        <div class="halo"></div>
+    </div>
+
+    <center>
+        <div class="div1">
+            <h2>
+                <p>請猜0-3的整數</p>
+            </h2>
+            <input type="text" id="input_guess" value="">
+            <button id="button">送出</button>
+        </div>
+    </center>
+
+    <script>
+
+        delaymotion();
+
+    </script>
+
+    <script>
+
+        document.getElementById("button").onclick =
+            function () {
+                let num = Math.random();//0~0.99999...
+                num *= 4;
+                num = Math.floor(num);
+                console.log(num);
+
+                if (num == document.getElementById("input_guess").value) {
+                    alert("猜對了");
+                }
+                else {
+                    alert("猜錯了,答案是" + num);
+                }
+            }
+
+
+    </script>
+</body>
+
+</html>

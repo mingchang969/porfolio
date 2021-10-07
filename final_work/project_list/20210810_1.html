@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./20210810_1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <br>
+    <header>
+        <h1>Listing</h1>
+    </header>
+
+    <form action="">
+        <input type="text">
+        <input type="number" min="2021" max="2050" placeholder="Year" required>
+        <input type="number" min="1" max="12" placeholder="Month" required>
+        <input type="number" min="1" max="31" placeholder="Day" required>
+        <button type="submit">Add</button>
+    </form>
+
+
+    <div class="sort">
+        <button>SORTED</button>
+    </div>
+
+    <section>
+    </section>
+
+    <script>
+
+        let btn_submit = document.querySelector("form button");
+        btn_submit.addEventListener("click", e => {
+            e.preventDefault();
+
+            let section = document.querySelector("section");
+
+            let form = e.target.parentElement;
+            let text = form.children[0].value;
+            let year = form.children[1].value;
+            let mon = form.children[2].value;
+            let day = form.children[3].value;
+            console.log(text + "-" + year + "-" + mon + "-" + day);
+
+            form.children[0].value = "";
+            if (text === "") {
+                alert("請輸入事項");
+                return;
+            }
+
+            let div_todo = document.createElement("div");
+            div_todo.classList.add("todo");
+            let p_text = document.createElement("p");
+            p_text.classList.add("todo-text");
+            p_text.innerText = text;
+            let p_time = document.createElement("p");
+            p_time.classList.add("todo-time");
+            p_time.innerText = year + " / " + mon + " / " + day;
+            div_todo.appendChild(p_text);
+            div_todo.appendChild(p_time);
+
+            let btn_check = document.createElement("button");
+            btn_check.classList.add("check");
+            btn_check.innerHTML = '<i class="fas fa-check-square"></i>';
+
+            btn_check.addEventListener("click", e => {
+                let div_all = e.target.parentElement;
+                div_all.classList.toggle("done");
+            });
+
+            let btn_delete = document.createElement("button");
+            btn_delete.classList.add("delete");
+            btn_delete.innerHTML = '<i class="fas fa-trash"></i>';
+
+            btn_delete.addEventListener("click", e => {
+                let div_all = e.target.parentElement;
+                div_all.addEventListener("animationend", () => {
+                    div_all.remove();
+
+                    let text = div_all.children[0].innerText;
+                    let myListArray = JSON.parse(localStorage.getItem("list"));
+                    myListArray.forEach((item, index) => {
+                        if (item.todoText == text) {
+                            myListArray.splice(index, 1);
+                            localStorage.setItem("list", JSON.stringify(myListArray));
+                        }
+                    })
+                });
+                div_all.style.animation = "scaleDown 0.6s ease";
+            });
+
+            div_todo.appendChild(btn_check);
+            div_todo.appendChild(btn_delete);
+
+            div_todo.style.animation = "scaleUp 0.5s ease";
+
+            section.appendChild(div_todo);
+
+            //////////////////////////////////
+            let myTodo = {
+                "todoText": text,
+                "todoYear": year,
+                "todoMonth": mon,
+                "todoDate": day
+            };
+
+            let myList = localStorage.getItem("list");
+            if (myList == null) {
+                localStorage.setItem("list", JSON.stringify([myTodo]));
+            }
+            else {
+                let myListArray = JSON.parse(myList);
+                myListArray.push(myTodo);
+                localStorage.setItem("list", JSON.stringify(myListArray));
+            }
+            console.log(JSON.parse(localStorage.getItem("list")));
+
+        });
+
+        loadData();
+        //////////////////////////////////
+        function loadData() {
+            let myList = localStorage.getItem("list");
+            if (myList != null) {
+                let myListArray = JSON.parse(myList);
+                myListArray.forEach(element => {
+
+                    let div_todo = document.createElement("div");
+                    div_todo.classList.add("todo");
+                    let p_text = document.createElement("p");
+                    p_text.classList.add("todo-text");
+                    p_text.innerText = element.todoText;
+                    let p_time = document.createElement("p");
+                    p_time.classList.add("todo-time");
+                    p_time.innerText = element.todoYear + " / " + element.todoMonth + " / " + element.todoDate;
+                    div_todo.appendChild(p_text);
+                    div_todo.appendChild(p_time);
+
+                    let btn_check = document.createElement("button");
+                    btn_check.classList.add("check");
+                    btn_check.innerHTML = '<i class="fas fa-check-square"></i>';
+
+                    btn_check.addEventListener("click", e => {
+                        let div_all = e.target.parentElement;
+                        div_all.classList.toggle("done");
+                    });
+
+                    let btn_delete = document.createElement("button");
+                    btn_delete.classList.add("delete");
+                    btn_delete.innerHTML = '<i class="fas fa-trash"></i>';
+
+                    btn_delete.addEventListener("click", e => {
+                        let div_all = e.target.parentElement;
+                        div_all.addEventListener("animationend", () => {
+                            div_all.remove();
+
+                            let text = div_all.children[0].innerText;
+                            let myListArray = JSON.parse(localStorage.getItem("list"));
+                            myListArray.forEach((item, index) => {
+                                if (item.todoText == text) {
+                                    myListArray.splice(index, 1);
+                                    localStorage.setItem("list", JSON.stringify(myListArray));
+                                }
+                            })
+                        });
+                        div_all.style.animation = "scaleDown 0.6s ease";
+                    });
+
+                    div_todo.appendChild(btn_check);
+                    div_todo.appendChild(btn_delete);
+
+                    div_todo.style.animation = "scaleUp 0.5s ease";
+
+                    let section = document.querySelector("section");
+
+                    section.appendChild(div_todo);
+                });
+            }
+        }
+        /////////////////////////////////////////
+        function mergeTime(arr1, arr2) {
+            let result = [];
+            let i = 0;
+            let j = 0;
+            while (i < arr1.length && j < arr2.length) {
+                if (Number(arr1[i].todoYear) > Number(arr2[j].todoYear)) {
+                    result.push(arr2[j]);
+                    j++;
+                }
+                else if (Number(arr1[i].todoYear) < Number(arr2[j].todoYear)) {
+                    result.push(arr1[i]);
+                    i++;
+                }
+                else if (Number(arr1[i].todoYear) == Number(arr2[j].todoYear)) {
+                    if (Number(arr1[i].todoMonth) > Number(arr2[j].todoMonth)) {
+                        result.push(arr2[j]);
+                        j++;
+                    }
+                    else if (Number(arr1[i].todoMonth) < Number(arr2[j].todoMonth)) {
+                        result.push(arr1[i]);
+                        i++;
+                    }
+                    else if (Number(arr1[i].todoMonth) == Number(arr2[j].todoMonth)) {
+                        if (Number(arr1[i].todoDate) > Number(arr2[j].todoDate)) {
+                            result.push(arr2[j]);
+                            j++;
+                        }
+                        else {
+                            result.push(arr1[i]);
+                            i++;
+                        }
+                    }
+                }
+            }
+            while (i < arr1.length) {
+                result.push(arr1[i]);
+                i++;
+            }
+            while (j < arr2.length) {
+                result.push(arr2[j]);
+                j++;
+            }
+            return result;
+        }
+
+        function mergeSort(arr) {
+            if (arr.length === 1) {
+                return arr;
+            }
+            else {
+                let middle = Math.floor(arr.length / 2);
+                let right = arr.slice(0, middle);
+                let left = arr.slice(middle, arr.length);
+                return mergeTime(mergeSort(right), mergeSort(left));
+            }
+        }
+
+        
+
+        let sortButton = document.querySelector("div.sort button");
+        sortButton.addEventListener("click", () => {
+
+            let sortedArray = mergeSort(JSON.parse(localStorage.getItem("list")));
+            localStorage.setItem("list", JSON.stringify(sortedArray));
+
+            let section = document.querySelector("section");
+
+            let len = section.children.length;
+            for (let i = 0; i < len; i++) {
+                section.children[0].remove();
+            }
+
+            loadData();
+        })
+
+    </script>
+
+</body>
+
+</html>

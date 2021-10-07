@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Staatliches&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg, rgb(86, 26, 121), rgb(72, 132, 211));
+}
+
+header {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        color: white;
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        input,
+        button {
+            border: none;
+            padding: 0.5rem 0.8rem;
+            font-size: 0.9rem;
+            margin: 0.2rem;
+            border-radius: 6px;
+            color: gray;
+        }
+
+        input[type="text"]{
+            width: 276px;
+            min-width: 276px;
+            margin: 10px 120px;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        input[type="number"] {
+            width: 68px;
+            text-align: center;
+        }
+
+        button {
+            cursor: pointer;
+            background: rgb(86, 26, 121);
+            color: white;
+        }
+
+        button:active {
+            cursor: pointer;
+            background: rgb(42, 12, 59);
+            color: rgb(212, 212, 212);
+        }
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        div.todo {
+            width: 50vw;
+            min-width: 276px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0.3rem 0rem;
+            transition: all 0.6s ease;
+    
+            p {
+                height: 1.8rem;
+                background-color: rgb(242, 255, 252);
+                border-radius: 5px;
+                color: gray;
+                padding: 0.4rem 0.5rem;
+                font-size: 0.85rem;
+            }
+    
+            p.todo-text {
+                width: 100%;
+                margin: 8px 0;
+            }
+    
+            p.todo-time {
+                width: 60%;
+                margin-right: 26px;
+                text-align: center;
+                background-color: rgb(59, 44, 116);
+                color: white;
+                opacity: 0.6;
+            }
+    
+            button {
+                padding: 0.4rem 0.58rem;
+                font-size: 1rem;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                color: white;
+                margin-left: 0.6rem;
+            }
+    
+            button.check {
+                background-color: rgb(253, 199, 99);
+            }
+    
+            button.check:active {
+                cursor: pointer;
+                background-color: rgb(177, 139, 69);
+                color: rgb(212, 212, 212);
+            }
+    
+            button.delete {
+                background-color: rgb(148, 143, 207);
+            }
+    
+            button.delete:active {
+                cursor: pointer;
+                background-color: rgb(107, 103, 148);
+                color: rgb(212, 212, 212);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 560px) {
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input,
+        button {
+            border: none;
+            padding: 0.5rem 0.8rem;
+            font-size: 0.9rem;
+            margin: 0.2rem;
+            border-radius: 6px;
+            color: gray;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        input[type="number"] {
+            width: 80px;
+            text-align: center;
+        }
+
+        button {
+            cursor: pointer;
+            background: rgb(86, 26, 121);
+            color: white;
+        }
+
+        button:active {
+            cursor: pointer;
+            background: rgb(42, 12, 59);
+            color: rgb(212, 212, 212);
+        }
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        div.todo {
+            width: 70vw;
+            display: flex;
+            align-items: center;
+            margin: 0.2rem 0rem;
+            transition: all 0.6s ease;
+    
+            p {
+                height: 1.8rem;
+                background-color: white;
+                border-radius: 5px;
+                color: gray;
+                padding: 0.4rem 0.5rem;
+                font-size: 0.85rem;
+            }
+    
+            p.todo-text {
+                width: 70%;
+            }
+    
+            p.todo-time {
+                width: 30%;
+                margin-left: 0.4rem;
+                text-align: center;
+                background-color: rgb(59, 44, 116);
+                color: white;
+                opacity: 0.6;
+            }
+    
+            button {
+                padding: 0.4rem 0.58rem;
+                font-size: 1rem;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                color: white;
+                margin-left: 0.4rem;
+            }
+    
+            button.check {
+                background-color: rgb(253, 199, 99);
+            }
+    
+            button.check:active {
+                cursor: pointer;
+                background-color: rgb(177, 139, 69);
+                color: rgb(212, 212, 212);
+            }
+    
+            button.delete {
+                background-color: rgb(148, 143, 207);
+            }
+    
+            button.delete:active {
+                cursor: pointer;
+                background-color: rgb(107, 103, 148);
+                color: rgb(212, 212, 212);
+            }
+        }
+    }
+}
+
+
+
+.done {
+    opacity: 0.5;
+    text-decoration: line-through;
+    text-decoration-thickness: 0.2rem;
+}
+
+i {
+    pointer-events: none;
+}
+
+div.sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6rem 0 1rem 0;
+
+    button {
+        cursor: pointer;
+        background-color: rgb(38, 30, 70);
+        color: white;
+        border: none;
+        padding: 0.4rem 0.58rem;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0) translate(-600px);
+    }
+    to {
+        transform: scale(1) translate(0px);
+    }
+}
+
+@keyframes scaleDown {
+    to {
+        transform: scale(0) translate(600px);
+    }
+}
