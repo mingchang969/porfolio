@@ -232,7 +232,7 @@ section {
                     font-size: 15px;
                 }
                 p.sub {
-                    font-size: small;
+                    font-size: 12px;
                 }
                 hr {
                     height: 50px;
@@ -364,8 +364,8 @@ section {
                     div.picture_container {
                         margin-top: 10px;
                         border-radius: 10px;
-                        width: 180px;
-                        height: 180px;
+                        width: 12vw;
+                        height: 12vw;
                         overflow: hidden;
                         transition: all 0.3s ease;
                         opacity: 0.2;

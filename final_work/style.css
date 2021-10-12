@@ -270,7 +270,7 @@ section div#bottomside div.S_introExp_box div.session:hover p {
 }
 
 section div#bottomside div.S_introExp_box div.session:hover p.sub {
-  font-size: small;
+  font-size: 12px;
 }
 
 section div#bottomside div.S_introExp_box div.session:hover hr {
@@ -449,8 +449,8 @@ section div#work .workbox div.subbox div.pictures {
 section div#work .workbox div.subbox div.pictures div.picture_container {
   margin-top: 10px;
   border-radius: 10px;
-  width: 180px;
-  height: 180px;
+  width: 12vw;
+  height: 12vw;
   overflow: hidden;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
